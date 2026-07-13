@@ -34,7 +34,7 @@
 
 
 <a href="http://www.mayan-edms.com">
-    <img align="center" height="200" width="200" src="https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo_bw.png">
+    <img align="center" height="200" width="200" src="mayan/apps/appearance/static/authentication/images/login-top.jpg">
 </a>
 
 <p>
