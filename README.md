@@ -1,3 +1,4 @@
+
 [![Support][support-badge]][support-url]
 [![DOI][doi-badge-imgshield]][doi-url]
 [![License][license-badge]][license-url]
@@ -38,48 +39,12 @@
 </a>
 
 <p>
-    The most advanced, scalable, and mature open source document management system.
+    The most advanced, scalable, and mature open source document management system based on the Mayan EDMS.
 <p>
 
 <img align="center" src="https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/overview.gif" width="400">
 
-# Getting started
 
-It is very easy to get started with Mayan EDMS, just deploy the official
-Docker Compose file.
-
-    curl https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/docker-compose.yml -O
-    curl https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/.env -O
-    docker compose up --detach
-
-The complete documentation is available at: https://docs.mayan-edms.com/parts/installation.html
-
-# Get the books
-
-<a href="https://a.co/d/cqda9uu">
-    <img align="center" src="https://m.media-amazon.com/images/I/61PAvrh303L._SL1293_.jpg" width="150">
-</a>
-<a href="https://a.co/d/9RMXyfn">
-    <img align="center" src="https://m.media-amazon.com/images/I/61g21N5oQCL._SL1491_.jpg" width="150">
-</a>
-
-# Tutorials
-
-For more in-depth articles, tutorials, and troubleshooting available in the Knowledge Base.
-
-
-<a href="https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q">
-    <img align="center" src="https://docs.mayan-edms.com/_static/knowledge-base.jpg" width="400">
-</a>
-
-Click the image or visit: https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q
-
-# Important links
-
-- [Homepage](http://www.mayan-edms.com)
-- [Documentation](https://docs.mayan-edms.com)
-- [Forum](https://forum.mayan-edms.com/)
-- [Source code, issues, bugs](https://gitlab.com/mayan-edms/mayan-edms)
 
 # Astro-edms
-# Astro-edms
+
