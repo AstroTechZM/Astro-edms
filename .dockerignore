@@ -4,6 +4,7 @@ HISTORY.md
 mayan/media
 db.sqlite*
 docker
+!docker/Dockerfile
 !docker/rootfs
 ./.*
 docs
