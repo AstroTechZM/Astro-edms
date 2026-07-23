@@ -1,40 +1,22 @@
-# syntax=docker/dockerfile:1
+# Use the stable production image as the base
+FROM mayanedms/mayanedms:latest
 
-FROM python:3.12-slim
+# Switch to root user to copy and overwrite system paths
+USER root
 
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+# The official image stores the operational source code here
+WORKDIR /opt/astro-edms
 
-WORKDIR /app
+# Copy your local repository changes into the container's source tree
+COPY --chown=mayan:mayan . .
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        build-essential \
-        libffi-dev \
-        libjpeg-dev \
-        libldap2-dev \
-        libpng-dev \
-        libsasl2-dev \
-        libssl-dev \
-        libtiff-dev \
-        libpq-dev \
-        zlib1g-dev \
-        libcairo2-dev \
-        libpango1.0-dev \
-        libgdk-pixbuf2.0-dev \
-        libmagic1 \
-        gettext \
-        git \
-        curl \
-    && rm -rf /var/lib/apt/lists/*
+# Re-run the python installations locally to compile any package updates
+RUN /opt/mayan-edms/venv/bin/pip install --no-cache-dir -e
 
-COPY requirements/production.txt ./requirements/production.txt
-RUN pip install --upgrade pip setuptools wheel \
-    && pip install -r requirements/production.txt
+# Revert back to the secure non-root user that Mayan runs on
+USER mayan
 
-COPY . .
+# Keep the official startup entries intact
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["mayan"]
 
-EXPOSE 8000
-
-CMD ["gunicorn", "mayan.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2"]
